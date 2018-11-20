@@ -1,0 +1,14 @@
+version: '2'
+services: 
+  fibos: 
+    build: ./
+    restart: always
+    stop_grace_period: 10m
+    ports:
+      - "8888:8888"
+      - "9977:9876"
+    volumes:
+      - ./data:/data
+      - ./genesis.json:/fibos/genesis.json
+      - ./_config.js:/fibos/_config.js
+      - ./start.js:/fibos/start.js

@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  eos:
+    image: eosio/eos:latest
+    command: /start_nodeosd.sh
+    hostname: eos
+    stop_grace_period: 10m
+    ports:
+      - 8888:8888
+      - 9876:9876
+    expose:
+      - "8888"
+    volumes:
+      - ./config:/etc/nodeos
+      - ./data:/data
+      - ./start_nodeosd_replay.sh:/start_nodeosd.sh:ro
+

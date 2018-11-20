@@ -1,0 +1,8 @@
+version: '2'
+services: 
+  fibos: 
+    build: ./
+    restart: always
+    volumes:
+      - ./_config.js:/fibos/_config.js
+      - ./autoClaimer.js:/fibos/start.js
