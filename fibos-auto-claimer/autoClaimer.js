@@ -54,7 +54,7 @@ function cacheRewards() {
                     }
                 ]
             }).then(res => {
-                console.log(res);
+                // console.log(res);
             }, err => {
                 console.error(err);
                 //retry
